@@ -1,0 +1,7 @@
+{
+  "name": "exports-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function for exporting leads",
+  "main": "index.js",
+  "dependencies": {}
+}

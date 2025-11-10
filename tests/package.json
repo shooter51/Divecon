@@ -1,0 +1,32 @@
+{
+  "name": "elite-adventures-e2e-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for Elite Adventures Belize Lead Capture",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+    "test:api": "playwright test e2e/07-api.spec.js",
+    "test:public": "playwright test e2e/01-public-form.spec.js",
+    "test:admin": "playwright test e2e/02-admin-auth.spec.js e2e/03-admin-dashboard.spec.js",
+    "test:full": "playwright test --project=chromium",
+    "report": "playwright show-report test-results/html-report",
+    "setup": "playwright install --with-deps"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "testing",
+    "lead-capture"
+  ],
+  "author": "Elite Adventures Belize",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}

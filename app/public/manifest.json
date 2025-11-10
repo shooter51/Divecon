@@ -1,0 +1,19 @@
+{
+  "name": "Elite Adventures Belize",
+  "short_name": "Elite Belize",
+  "description": "Contact Elite Adventures Belize for unforgettable diving and adventure experiences",
+  "start_url": "https://diveelitebelize.com/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#006eb8",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo.avif",
+      "sizes": "192x192 512x512",
+      "type": "image/avif",
+      "purpose": "any"
+    }
+  ]
+}

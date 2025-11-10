@@ -1,0 +1,14 @@
+ReferenceError: test is not defined
+
+   at 02-admin-auth.spec.js:11
+
+   9 | baseTest.describe.skip('Admin Authentication', () => {
+  10 |
+> 11 |   test('should show admin login link', async ({ page }) => {
+     |   ^
+  12 |     await page.goto('/');
+  13 |
+  14 |     const adminLink = page.locator(selectors.admin.loginButton);
+    at /Users/tomgibson/source/Divecon/tests/e2e/02-admin-auth.spec.js:11:3
+    at Object.<anonymous> (/Users/tomgibson/source/Divecon/tests/e2e/02-admin-auth.spec.js:9:19)
+

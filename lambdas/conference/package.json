@@ -1,0 +1,9 @@
+{
+  "name": "conference-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function for conference and QR code management",
+  "main": "index.js",
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  }
+}

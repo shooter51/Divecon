@@ -1,0 +1,9 @@
+{
+  "name": "leads-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function for lead management",
+  "main": "index.js",
+  "dependencies": {
+    "ulid": "^2.3.0"
+  }
+}

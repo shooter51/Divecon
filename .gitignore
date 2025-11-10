@@ -1,0 +1,34 @@
+# Environment
+.env
+.env.local
+
+# Terraform
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.backup
+infra/terraform/.terraform.lock.hcl
+infra/terraform/terraform.tfvars
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Lambda packages
+lambdas/**/*.zip
+lambdas/**/node_modules/
+
+# Build artifacts
+app/public/bundle.js
+app/public/bundle.js.map
