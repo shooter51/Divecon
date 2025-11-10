@@ -71,7 +71,10 @@ function renderPublicForm() {
         <img src="/logo.avif" alt="Elite Adventures Belize" class="header-logo" />
         <h1>Elite Adventures Belize</h1>
         <p>Connect with us for unforgettable Belize adventures</p>
-        <a href="https://eliteadventuresbelize.com" target="_blank" rel="noopener">Visit our website →</a>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
+          <a href="https://eliteadventuresbelize.com" target="_blank" rel="noopener">Visit our website →</a>
+          <a href="/menu.html" target="_blank" rel="noopener" style="background: #fff; color: #667eea; padding: 8px 16px; border-radius: 20px; font-weight: 600;">View Pricing Menu 💰</a>
+        </div>
       </div>
 
       <form id="lead-form">

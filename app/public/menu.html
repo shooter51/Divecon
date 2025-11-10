@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Adventures Belize - Pricing Menu</title>
+  <link rel="icon" type="image/png" href="/icon-192.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .header img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1);
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .effective-date {
+      background: #f8f9fa;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      color: #0066cc;
+      border-bottom: 3px solid #0066cc;
+    }
+
+    .content {
+      padding: 40px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .category {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .category h2 {
+      color: #0066cc;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #0066cc;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .price-item:last-child {
+      border-bottom: none;
+    }
+
+    .price-item .name {
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .price-item .price {
+      color: #0066cc;
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    .all-day-tours {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .all-day-tours h2 {
+      color: white;
+      border-bottom-color: white;
+    }
+
+    .all-day-tours .price-item {
+      border-bottom-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .all-day-tours .price {
+      color: #fff;
+    }
+
+    .packages {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+
+    .packages h2 {
+      color: white;
+      border-bottom-color: white;
+    }
+
+    .packages .price-item {
+      border-bottom-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .packages .price {
+      color: #fff;
+    }
+
+    .packages .note {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer-note {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .footer-note p {
+      color: #856404;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      background: #0066cc;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      border-bottom-color: white;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.8em;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .category {
+        padding: 20px;
+      }
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #0066cc;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="/logo.avif" alt="Elite Adventures Belize">
+      <h1>Elite Adventures Belize</h1>
+      <p>Pricing Menu</p>
+      <a href="/" class="cta-button">Book Your Adventure</a>
+    </div>
+
+    <div class="effective-date">
+      New Pricing Effective January 1, 2024
+    </div>
+
+    <div class="content">
+      <div class="pricing-grid">
+        <!-- Scuba Diving -->
+        <div class="category">
+          <h2>Scuba Diving</h2>
+          <div class="price-item">
+            <span class="name">Single Tank</span>
+            <span class="price">$55</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Two Tank</span>
+            <span class="price">$85</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Three Tank</span>
+            <span class="price">$115</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Night Dive (Reef)</span>
+            <span class="price">$75</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Hol Chan Combo</span>
+            <span class="price">$75</span>
+          </div>
+        </div>
+
+        <!-- Snorkeling Tours -->
+        <div class="category">
+          <h2>Snorkeling Tours</h2>
+          <div class="price-item">
+            <span class="name">Hol Chan/Shark Ray</span>
+            <span class="price">$55</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Mexico Rocks</span>
+            <span class="price">$55</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Tranquility</span>
+            <span class="price">$165</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Turneffe/Blue Hole</span>
+            <span class="price">$195</span>
+          </div>
+        </div>
+
+        <!-- Private Tours -->
+        <div class="category">
+          <h2>Private Tours</h2>
+          <div class="price-item">
+            <span class="name">Full Day (1-10 Person)</span>
+            <span class="price">$1,100</span>
+          </div>
+          <div class="note">$100/person over 10</div>
+          <div class="price-item">
+            <span class="name">Half Day (1-10 Person)</span>
+            <span class="price">$700</span>
+          </div>
+          <div class="note">$75/person over 10</div>
+        </div>
+
+        <!-- Dive Packages -->
+        <div class="category packages">
+          <h2>Dive Packages</h2>
+          <div class="price-item">
+            <span class="name">10 Dive Package</span>
+            <span class="price">$345</span>
+          </div>
+          <div class="note">Good for 1 year from date of purchase</div>
+          <div class="price-item">
+            <span class="name">6 Dive Package</span>
+            <span class="price">$230</span>
+          </div>
+          <div class="note">Good for 1 year from date of purchase</div>
+        </div>
+
+        <!-- Scuba Instruction -->
+        <div class="category">
+          <h2>Scuba Instruction</h2>
+          <div class="price-item">
+            <span class="name">Intro to Scuba (DSD)</span>
+            <span class="price">$150</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Refresher Course</span>
+            <span class="price">$150</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Open Water Course</span>
+            <span class="price">$450</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Open Water Referral</span>
+            <span class="price">$350</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Advanced Open Water</span>
+            <span class="price">$400</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Rescue Diver</span>
+            <span class="price">$275</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Enriched Air NITROX</span>
+            <span class="price">$165</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Medic First Aid (EFR)</span>
+            <span class="price">$175</span>
+          </div>
+        </div>
+
+        <!-- Fishing Tours -->
+        <div class="category">
+          <h2>Fishing Tours (1-4 Person)</h2>
+          <div class="price-item">
+            <span class="name">½ Day Reef Fishing</span>
+            <span class="price">$400</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Full Day Reef Fishing</span>
+            <span class="price">$700</span>
+          </div>
+          <div class="price-item">
+            <span class="name">½ Day Deep Sea</span>
+            <span class="price">$650</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Full Day Deep Sea</span>
+            <span class="price">$1,100</span>
+          </div>
+          <div class="note">Additional $75/person for ½ day, $100/person for full day</div>
+        </div>
+
+        <!-- All Day Tours -->
+        <div class="category all-day-tours">
+          <h2>All Day Tours</h2>
+          <div class="price-item">
+            <span class="name">Turneffe</span>
+            <span class="price">$275</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Great Blue Hole</span>
+            <span class="price">$295</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Calabash/Witconcrete</span>
+            <span class="price">$300</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Tranquility Bay</span>
+            <span class="price">$200</span>
+          </div>
+          <div class="price-item">
+            <span class="name">Goffs Caye/Spanish Bay/Elbow</span>
+            <span class="price">$300</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <p><strong>Important:</strong> Park fees, gear rental and tax of 12.5% are not included in prices.</p>
+        <p>All prices are in US Dollars</p>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <div class="contact-item">
+        <strong>Email:</strong> <a href="mailto:contact@eliteadventuresbelize.com">contact@eliteadventuresbelize.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>Phone:</strong> <a href="tel:+5012263483">+501-226-3483</a>
+      </div>
+      <div class="contact-item">
+        <strong>WhatsApp:</strong> <a href="https://wa.me/12108034797">+1-210-803-4797</a>
+      </div>
+      <div style="margin-top: 20px;">
+        <a href="/" class="cta-button">Book Your Adventure Now</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
